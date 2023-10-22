@@ -178,10 +178,11 @@
         <div class="column is-four-fifths">
           <h2 class="title is-3">Method</h2>
             <img id="teaser" height="100%" src="./static/images/OverView.png" alt="Teaser">
-            An overview of LfVoid. LfVoid consists of two parts: (a) Goal image generation, where
-            we apply image editing on the initial observations according to different editing instructions to obtain
-            a visual goal dataset; (b) Example-Based Visual RL, where we perform reinforcement learning on the
-            generated dataset to achieve the desired goal image in various environments.
+            LfVoid consists of two parts: (a) Goal image generation and (b) Example-Based Visual RL.<br>
+            (a) Goal image generation applies image editing on the initial observations according 
+            to different editing instructions to obtain a visual goal dataset. <br>
+            (b) Example-Based Visual RLperform reinforcement learning on the 
+            generated dataset to achieve the desired goal image in various environments. <br>
         </div>
       </div>
     </div>
@@ -191,7 +192,7 @@
     <div class="container">
       <div class="columns is-centered has-text-centered">
         <div class="column is-four-fifths">
-          <h2 class="title is-3">Goal Generation Results</h2>
+          <h2 class="title is-4">  Goal Generation Results</h2>
           <img height="80%" src="./static/images/Appearance Based Editing.png">
           Goal generation results of LfVoid on appearance-based editing. The Wipe task and LED task require changing the appearance of an object, such as the surface of a table and the color of a LED light.
         <br>
@@ -219,9 +220,111 @@
         </div>
       </div>
     </div>
-  </section>
+</section>
 
 
+<section class="section">
+    <div class="container">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-4">  Visual Reinforcement Learning Results</h2>
+            <img height="80%" src="./static/images/sim rl.png">
+            The episode reward curve of simulation tasks. We show the results of the CLIP baseline (CLIP), 
+            InstructPix2Pix baseline (IP2P), using real goal image as an upper bound (Real Goal), and LfVoid (Ours)
+            <br>
+            <br>
+            <br>
+
+            <img height="80%" src="./static/images/sim rl numeric.png">
+            The numerical metrics of simulation tasks. We report the success rate for LED and Push, and
+            the number of stain patches cleaned for Wipe.
+            <br>
+            <br>
+            <br>
+
+            <img height="60%" src="./static/images/real rl.png">
+                Visualization of the reward function on Real Robot environments. We visualize the classifier-based reward function 
+                obtained by the goal images generated through LfVoid (Ours) and other baselines on successful trajectories. 
+                Results show that the reward function obtained by LfVoid can provide near monotonic dense signals, comparable to those from the real goals.
+            <br>
+            <br>
+            <br>
+
+            <table>
+                <thead>
+                <tr>
+                    <th></th>
+                    <th></th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>
+                    <figure class="small text-center"><img
+                        src="./static/gifs/push_success.gif"
+                        alt="Push Success">
+                        <figcaption>
+                        <p>Push Success</p>
+                        </figcaption>
+                    </figure>
+                    </td>
+                    <td>
+                    <figure><img
+                        src="./static/gifs/push_failure.gif"
+                        alt="Push Failure">
+                        <figcaption>
+                        <p>Push Failure</p>
+                        </figcaption>
+                    </figure>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                    <figure class="small text-center"><img
+                        src="./static/gifs/led_success.gif"
+                        alt="LED Success">
+                        <figcaption>
+                        <p>LED Success</p>
+                        </figcaption>
+                    </figure>
+                    </td>
+                    <td>
+                    <figure><img
+                        src="./static/gifs/led_failure.gif"
+                        alt="LED Failure">
+                        <figcaption>
+                        <p>LED Failure</p>
+                        </figcaption>
+                    </figure>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                    <figure class="small text-center"><img
+                        src="./static/gifs/wipe_success.gif"
+                        alt="Wipe Success">
+                        <figcaption>
+                        <p>Wipe Success</p>
+                        </figcaption>
+                    </figure>
+                    </td>
+                    <td>
+                    <figure><img
+                        src="./static/gifs/wipe_failure.gif"
+                        alt="Wipe Failure">
+                        <figcaption>
+                        <p>Wipe Failure</p>
+                        </figcaption>
+                    </figure>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+
+        </div>
+      </div>
+    </div>
+</section>
 
 
 <section class="section" id="BibTeX">
@@ -249,6 +352,7 @@
       <div class="columns is-centered">
         <div class="column is-two-thirds has-text-justified">
           <h2 class="title">Acknowledgements</h2>
+          This work is supported by National Key R&D Program of China (2022ZD0161700).
           <p>Website adapted from the following <a href="http://nerfies.github.io">template</a>.</p>
         </div>
       </div>
